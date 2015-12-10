@@ -62,10 +62,13 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -92,6 +95,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsMembres.xsd</DependentUpon>
     </Compile>
+    <Compile Include="frmListeMembre.Designer.vb">
+      <DependentUpon>frmListeMembre.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmListeMembre.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MenuPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +125,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmListeMembre.resx">
+      <DependentUpon>frmListeMembre.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.vb</DependentUpon>
     </EmbeddedResource>

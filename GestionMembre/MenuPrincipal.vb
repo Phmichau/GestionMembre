@@ -4,6 +4,6 @@
     End Sub
 
     Private Sub ListeDesMembresToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListeDesMembresToolStripMenuItem.Click
-
+        frmListeMembre.Show()
     End Sub
 End Class
