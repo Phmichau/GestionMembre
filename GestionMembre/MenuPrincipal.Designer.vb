@@ -31,13 +31,15 @@ Partial Class MenuPrincipal
         Me.EnvoiDeCourrielToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AideToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ÀProposDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FenêtresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FichierToolStripMenuItem, Me.MembresToolStripMenuItem, Me.ImpressionToolStripMenuItem, Me.EnvoiDeCourrielToolStripMenuItem, Me.AideToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FichierToolStripMenuItem, Me.MembresToolStripMenuItem, Me.ImpressionToolStripMenuItem, Me.EnvoiDeCourrielToolStripMenuItem, Me.FenêtresToolStripMenuItem, Me.AideToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.MdiWindowListItem = Me.FenêtresToolStripMenuItem
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1008, 24)
         Me.MenuStrip1.TabIndex = 1
@@ -53,7 +55,7 @@ Partial Class MenuPrincipal
         'QuitterToolStripMenuItem
         '
         Me.QuitterToolStripMenuItem.Name = "QuitterToolStripMenuItem"
-        Me.QuitterToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.QuitterToolStripMenuItem.Size = New System.Drawing.Size(111, 22)
         Me.QuitterToolStripMenuItem.Text = "Quitter"
         '
         'MembresToolStripMenuItem
@@ -94,6 +96,13 @@ Partial Class MenuPrincipal
         Me.ÀProposDeToolStripMenuItem.Size = New System.Drawing.Size(150, 22)
         Me.ÀProposDeToolStripMenuItem.Text = "À propos de ..."
         '
+        'FenêtresToolStripMenuItem
+        '
+        Me.FenêtresToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.FenêtresToolStripMenuItem.Name = "FenêtresToolStripMenuItem"
+        Me.FenêtresToolStripMenuItem.Size = New System.Drawing.Size(63, 20)
+        Me.FenêtresToolStripMenuItem.Text = "Fenêtres"
+        '
         'MenuPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -120,4 +129,5 @@ Partial Class MenuPrincipal
     Friend WithEvents EnvoiDeCourrielToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AideToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ÀProposDeToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents FenêtresToolStripMenuItem As ToolStripMenuItem
 End Class

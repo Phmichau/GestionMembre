@@ -24,35 +24,35 @@ Partial Class frmListeMembre
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.dsMembres = New GestionMembre.dsMembres()
         Me.MembresBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.dsMembres = New GestionMembre.dsMembres()
+        Me.rpvListeMembre = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.MembresTableAdapter = New GestionMembre.dsMembresTableAdapters.MembresTableAdapter()
-        CType(Me.dsMembres, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MembresBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dsMembres, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'ReportViewer1
+        'MembresBindingSource
         '
-        Me.ReportViewer1.Dock = System.Windows.Forms.DockStyle.Top
-        ReportDataSource1.Name = "datasetMembres"
-        ReportDataSource1.Value = Me.MembresBindingSource
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
-        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "GestionMembre.rptListeMembre.rdlc"
-        Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
-        Me.ReportViewer1.Name = "ReportViewer1"
-        Me.ReportViewer1.Size = New System.Drawing.Size(284, 261)
-        Me.ReportViewer1.TabIndex = 0
+        Me.MembresBindingSource.DataMember = "Membres"
+        Me.MembresBindingSource.DataSource = Me.dsMembres
         '
         'dsMembres
         '
         Me.dsMembres.DataSetName = "dsMembres"
         Me.dsMembres.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'MembresBindingSource
+        'rpvListeMembre
         '
-        Me.MembresBindingSource.DataMember = "Membres"
-        Me.MembresBindingSource.DataSource = Me.dsMembres
+        Me.rpvListeMembre.Dock = System.Windows.Forms.DockStyle.Fill
+        ReportDataSource1.Name = "datasetMembres"
+        ReportDataSource1.Value = Me.MembresBindingSource
+        Me.rpvListeMembre.LocalReport.DataSources.Add(ReportDataSource1)
+        Me.rpvListeMembre.LocalReport.ReportEmbeddedResource = "GestionMembre.rptListeMembre.rdlc"
+        Me.rpvListeMembre.Location = New System.Drawing.Point(0, 0)
+        Me.rpvListeMembre.Name = "rpvListeMembre"
+        Me.rpvListeMembre.Size = New System.Drawing.Size(856, 461)
+        Me.rpvListeMembre.TabIndex = 0
         '
         'MembresTableAdapter
         '
@@ -62,17 +62,19 @@ Partial Class frmListeMembre
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(284, 261)
-        Me.Controls.Add(Me.ReportViewer1)
+        Me.ClientSize = New System.Drawing.Size(856, 461)
+        Me.Controls.Add(Me.rpvListeMembre)
         Me.Name = "frmListeMembre"
+        Me.ShowInTaskbar = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Liste des membres"
-        CType(Me.dsMembres, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MembresBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dsMembres, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
+    Friend WithEvents rpvListeMembre As Microsoft.Reporting.WinForms.ReportViewer
     Friend WithEvents MembresBindingSource As BindingSource
     Friend WithEvents dsMembres As dsMembres
     Friend WithEvents MembresTableAdapter As dsMembresTableAdapters.MembresTableAdapter
